@@ -6,7 +6,6 @@ from model.model import encode_input,model_prediction
 
 root_directory = Path(__file__).resolve(True).parent.parent.parent
 
-
 app = FastAPI()
 
 # {
