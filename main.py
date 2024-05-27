@@ -32,7 +32,6 @@ app = FastAPI()
 #   "habitat": "g"
 # }
 
-
 class Mushroom(BaseModel):
     cap_shape:object#['x', 'b', 's', 'f', 'k', 'c']
     cap_surface:object #['s', 'y', 'f', 'g']
