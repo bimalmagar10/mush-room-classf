@@ -9,7 +9,6 @@ root_directory = Path(__file__).resolve(True).parent.parent.parent
 
 app = FastAPI()
 
-
 # {
 #   "cap_shape": "x",
 #   "cap_surface": "s",
