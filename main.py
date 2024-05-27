@@ -1,36 +1,45 @@
 from fastapi import FastAPI,HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel,Field
 import pandas as pd
 from pathlib import Path
 from model.model import encode_input,model_prediction
 
+
 root_directory = Path(__file__).resolve(True).parent.parent.parent
 
 app = FastAPI()
 
-{
-  "cap_shape": "x",
-  "cap_surface": "s",
-  "cap_color": "y",
-  "bruises": "t",
-  "odor": "a",
-  "gill_attachment": "f",
-  "gill_spacing": "c",
-  "gill_size": "b",
-  "gill_color": "k",
-  "stalk_shape": "e",
-  "stalk_root": "c",
-  "stalk_surface_above_ring": "s",
-  "stalk_surface_below_ring": "s",
-  "stalk_color_above_ring": "w",
-  "stalk_color_below_ring": "w",
-  "veil_color": "w",
-  "ring_number": "o",
-  "ring_type": "p",
-  "spore_print_color": "n",
-  "population": "n",
-  "habitat": "g"
-}
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+# {
+#   "cap_shape": "x",
+#   "cap_surface": "s",
+#   "cap_color": "y",
+#   "bruises": "t",
+#   "odor": "a",
+#   "gill_attachment": "f",
+#   "gill_spacing": "c",
+#   "gill_size": "b",
+#   "gill_color": "k",
+#   "stalk_shape": "e",
+#   "stalk_root": "c",
+#   "stalk_surface_above_ring": "s",
+#   "stalk_surface_below_ring": "s",
+#   "stalk_color_above_ring": "w",
+#   "stalk_color_below_ring": "w",
+#   "veil_color": "w",
+#   "ring_number": "o",
+#   "ring_type": "p",
+#   "spore_print_color": "n",
+#   "population": "n",
+#   "habitat": "g"
+# }
 
 class Mushroom(BaseModel):
     cap_shape:object#['x', 'b', 's', 'f', 'k', 'c']
