@@ -83,7 +83,7 @@ const Predict = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid gutter={{ base: 10, xs: "md", md: "xl", xl: 20 }}>
           {elements?.map?.((el) => (
-            <Grid.Col key={el?.attribute} span={4}>
+            <Grid.Col key={el?.attribute} span={{ base: 12, md: 6, lg: 4 }}>
               <Controller
                 name={el?.name}
                 control={control}

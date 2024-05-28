@@ -1,4 +1,4 @@
-import { Text, Container, Title, Space, Table } from "@mantine/core";
+import { Container, Title, Space, Table, ScrollArea } from "@mantine/core";
 import { elements } from "../lib";
 import Predict from "./Predict";
 
@@ -26,15 +26,17 @@ const Home = () => {
       <Title order={4} px={"xs"} mb={"md"}>
         Full form of the values above listed below
       </Title>
-      <Table>
-        <Table.Thead>
-          <Table.Tr>
-            <Table.Th>Attribute</Table.Th>
-            <Table.Th>Values</Table.Th>
-          </Table.Tr>
-        </Table.Thead>
-        <Table.Tbody>{rows}</Table.Tbody>
-      </Table>
+      <ScrollArea w={300} h={400}>
+        <Table style={{ overflowX: "scroll" }}>
+          <Table.Thead>
+            <Table.Tr>
+              <Table.Th>Attribute</Table.Th>
+              <Table.Th>Values</Table.Th>
+            </Table.Tr>
+          </Table.Thead>
+          <Table.Tbody>{rows}</Table.Tbody>
+        </Table>
+      </ScrollArea>
     </Container>
   );
 };
